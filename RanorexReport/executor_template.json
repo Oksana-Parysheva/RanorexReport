@@ -1,0 +1,10 @@
+{
+    "name": "UVCS_Pipeline_tests",
+    "url": "http://10.3.97.27:8080/projects/UVCS/reports/allure-runs/<runFolder>/index.html",
+    "buildOrder": "<buildNumber>",
+    "buildName": "build#<buildNumber>",
+    "buildUrl": "https://dev.azure.com/AlconRD/Automation%20Center%20of%20Excellence/_build/UVCS_Pipeline_tests/<buildNumber>",
+    "type": "Azure DevOps",
+    "reportUrl": "http://10.3.97.27:8080/projects/UVCS/reports/allure-runs/<runFolder>/index.html",
+    "reportName": "UVCS Report - Build version: <buildVersion> - Run #<buildNumber>"
+}

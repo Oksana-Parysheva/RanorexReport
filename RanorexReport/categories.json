@@ -1,0 +1,51 @@
+[
+  {
+    "name": "Ranorex can't access the process",
+    "messageRegex": ".*Ranorex to access the process.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+	"name": "Functional observations",
+	"messageRegex": ".*Expected.*",
+	"matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to AT001",
+    "messageRegex": ".*AT001(?!\\d).*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to AT0013",
+    "messageRegex": ".*AT0013.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to AT0022",
+    "messageRegex": ".*AT0022.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to AT0045",
+    "messageRegex": ".*AT0045.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to AT0085",
+    "messageRegex": ".*AT0085.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Failed due to SCR findings",
+    "messageRegex": ".*SCR.*",
+    "matchedStatuses": ["failed"]
+  },
+  {
+    "name": "Other observations",
+    "messageRegex": "^(?!.*Expected)(?!.*AT001(?!\\d))(?!.*AT00\\d)(?!.*Ranorex to access the process)(?!.*SCR).+",
+    "matchedStatuses": ["failed"]
+  },
+  {
+	"name": "Skipped tests",
+	"matchedStatuses": ["skipped"]
+  }
+]
