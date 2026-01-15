@@ -1,21 +1,3 @@
-﻿//using RanorexReport.Core;
-
-//internal class Program
-//{
-//    static void Main(string[] args)
-//    {
-//        // Temporary fallback (optional)
-//        RanorexAllureGenerator.Generate(
-//            ranorexArtifactsPath: @"D:\UVCS-to-allure\RxReport_Failed",
-//            allureOutputPath: @"D:\UVCS-to-allure\RxReport_Failed",
-//            buildId: "726538",
-//            runName: "LocalRun",
-//            zipName: null
-//        );
-//    }
-//}
-
-
 using RanorexReport.Core;
 using System;
 using System.CommandLine;
