@@ -1,4 +1,10 @@
-# RanorexReportToAllure
+# RanorexReport
+
+## Overview 
+
+This solution is creating __*allure-results*__ folder with all artefacts like *.-results.json, *.-container.json, attachments. 
+
+Any Allure version (2 or 3) can be used for report generation.
 
 ## Setup
 ### Java Installation
@@ -60,28 +66,33 @@ If java isn’t recognized, add it to PATH manually:
 
 ### Allure Installation
 
-Install Allure from archive. Follow the official instructions: 👉 https://allurereport.org/docs/install-for-windows/
+Install any Allure version. Follow the official instructions: 👉 https://allurereport.org/docs/install-for-windows/
 
-## How to use RanorexReportToAllure
+## How to use RanorexReport
 
-Open command line and run the following command
+* For report generation needed folder with the following results from Ranorex:
+   + *.rxlog.data
+   + images/videos folder with artefacts for failed tests
+   + *.pdf  (optional)
+   + *.zip with full Ranorex report (optional)
+
+Open command line and run the following CLI command
 
 ```cmd
-   RanorexReport.exe -RanorexReportsPath "pathToRanorexArtifacts" -AllureFolderPath "pathToFolderToCreateAllureReports"
+   dotnet run -- create "RanorexReportsPath" "AllureFolderPath" --buildId <buildId> --runName "<runName>" --zipName "<zipName>.zip"
 ```
-+ ___RanorexReportsPath__ - put here path to Ranorex logs. __*.rxlog.data__ files are used to create Allure results_
-+ ___AllureFolderPath__ - path to folder where allure-results and allure-report will be created_
+   + ___RanorexReportsPath__ - put here path to Ranorex logs. __*.rxlog.data__ files are used to create alure-results_
+   + ___AllureFolderPath__ - path to folder where allure-results folder will be created_
+   + ___buildId__ - build id which is used in executor.json file_
+   + ___runName__ - run name which is used in executor.json file_
+   + ___zipName__ - *.zip file name with extention (it will be attached to test cases)_
 
-### How RanorexReportToAllure works
+### How RanorexReport works
 
-1. __Generate allure results__. All Allure results are generated and placed into __*allure-results*__ folder.
+* __Generate allure results__. All allure results are generated and placed into __*allure-results*__ folder.
    + __*.rxlog.data__ files are parsed into objects;
-   + *-result.json, *-attachment.[html/jpg/pdf/png/txt], *-container.json Allure artifacts are created
-2. __Copy history folder__ into __allure-results__ folder, if exists (path to __*allure-report*__ folder must be provided)
-3. __Build Allure report__. 
-   + following Powershell command is running
-   ``` pwsh
-      allure generate "allureResultsPath" --clean -o "allureReportPath"
-   ```
-   + Create __environments.json__ file
+   + __*-result.json__, __*-attachment.[html/jpg/pdf/png/txt]__, __*-container.json__ allure artifacts are created
+   + Creates __environment.json__ file - this might be updated in accordance with your requirements
+   + __executor.json__ - file is copied to allure-results folder, executor_template.json might be updated with your refs
+   + __categories.json__ - must be updated in solution with your regular expressions in solution
 
